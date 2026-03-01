@@ -29,14 +29,7 @@ Il est développé à des fins éducatives et de veille personnelle uniquement.
 
 ## Installation
 
-### 1. Cloner le dépôt
-
-```bash
-git clone <repo-url>
-cd FrenchBreaches_Notifier
-```
-
-### 2. Configurer les variables d'environnement
+### 1. Configurer les variables d'environnement
 
 ```bash
 cp .env.example .env
@@ -48,7 +41,7 @@ cp .env.example .env
 DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/XXXX/XXXX
 ```
 
-### 3. Lancer
+### 2. Lancement de la stack
 
 ```bash
 docker compose up -d
@@ -62,13 +55,20 @@ docker compose logs -f
 
 ## Variables d'environnement
 
+Les variables d'environnement sont configurées dans le fichier `.env`.
+
+### Variables obligatoires
+
+| Variable | Description |
+|---|---|
+| `DISCORD_WEBHOOK_URL` | **Requis** — URL du Webhook Discord |
+
+### Variables personnalisables
+
 | Variable | Description | Défaut |
 |---|---|---|
-| `API_URL` | URL de l'API FrenchBreaches | https://frenchbreaches.com/api/articles_api.php |
-| `BASE_URL` | URL de base du site | https://frenchbreaches.com |
 | `SEEN_FILE` | Chemin du fichier de persistance | /app/data/seen_leaks.json |
 | `USER_AGENT` | User-Agent pour les requêtes HTTP | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 |
-| `DISCORD_WEBHOOK_URL` | **Requis** — URL du Webhook Discord | — |
 | `CHECK_INTERVAL` | Intervalle entre les vérifications en secondes (Par défaut 10 minutes) | `600` |
 | `DISCORD_EMBED_COLOR` | Couleur de l'embed Discord (hex) | `0xFF4444` |
 | `DISCORD_DESC_LIMIT` | Limite de caractères pour la description | `4096` |
